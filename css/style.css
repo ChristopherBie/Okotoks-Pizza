@@ -13,6 +13,11 @@ h1 {
     font-family: 'Helvetica';
 }
 
+section {
+    background-color: rgb(224, 115, 38);
+    text-size-adjust: 180;
+}
+
 iframe {
     width: 560px;
     height: 315px;
@@ -34,4 +39,8 @@ div /*for the iframe*/ {
 
 #two {
     width: 300px;
+}
+
+.contact {
+    background-color: blanchedalmond;
 }
