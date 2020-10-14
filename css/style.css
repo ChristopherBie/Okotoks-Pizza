@@ -1,15 +1,37 @@
 body {
-    background: light red;
+    background-color: red;
+    color: rgb(216, 2, 2);
 }
 
-body {
-    background-color: red;
-    font-family: 'Source Sans Pro', sans-serif;
-    color: #000000;
+header {
+    background-color: blanchedalmond;
+    text-align: center;
+    padding: 20px;
 }
 
 h1 {
-    color: #54ef54;
     font-family: 'Helvetica';
-    text-align: left;
+}
+
+iframe {
+    width: 560px;
+    height: 315px;
+}
+
+div /*for the iframe*/ {
+    text-align: center;
+}
+
+.image {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom: 35px;
+}
+
+#one, #three {
+    width: 470px;
+}
+
+#two {
+    width: 300px;
 }
