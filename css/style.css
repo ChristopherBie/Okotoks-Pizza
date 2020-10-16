@@ -5,17 +5,42 @@ body {
 
 header, h2 {
     background-color: blanchedalmond;
-    color: rgb(216, 2, 2);
     text-align: center;
+    padding: 20px;
 }
 
-h1 {
+header h1 {
+    color: rgb(216, 2, 2);
+}
+
+div > h1{
     padding: 20px;
 }
 
 .nav-bar {
     background-color: rgb(224, 115, 38);
     text-size-adjust: 180;
+}
+
+a#contact + a {
+color: darkred;
+font-style: italic;
+}
+
+a:link {
+    color: black;
+}
+
+a:hover {
+    font-weight: bold;
+}
+
+a:active {
+    color: blue;
+}
+
+a:visited {
+    color: blanchedalmond;
 }
 
 iframe {
@@ -44,3 +69,17 @@ iframe {
 .contact {
     background-color: blanchedalmond;
 }
+
+
+
+/*
+Descendant selector (space)
+Child selector ( > )
+Adjacent Sibling selector ( + )
+:link
+:visited
+:hover
+:active
+
+Added new CSS selectors
+*/
