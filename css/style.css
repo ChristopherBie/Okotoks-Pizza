@@ -1,19 +1,19 @@
 body {
     background-color: red;
-    color: rgb(216, 2, 2);
-}
+    color: blanchedalmond;
+    font-family: 'Helvetica';}
 
-header {
+header, h2 {
     background-color: blanchedalmond;
+    color: rgb(216, 2, 2);
     text-align: center;
-    padding: 20px;
 }
 
 h1 {
-    font-family: 'Helvetica';
+    padding: 20px;
 }
 
-section {
+.nav-bar {
     background-color: rgb(224, 115, 38);
     text-size-adjust: 180;
 }
@@ -23,7 +23,7 @@ iframe {
     height: 315px;
 }
 
-div /*for the iframe*/ {
+.iframe {
     text-align: center;
 }
 
