@@ -35,12 +35,12 @@ a:hover {
     font-weight: bold;
 }
 
-a:active {
-    color: blue;
-}
-
 a:visited {
     color: blanchedalmond;
+}
+
+a:active {
+    color: blue;
 }
 
 iframe {
@@ -72,14 +72,3 @@ iframe {
 
 
 
-/*
-Descendant selector (space)
-Child selector ( > )
-Adjacent Sibling selector ( + )
-:link
-:visited
-:hover
-:active
-
-Added new CSS selectors
-*/
