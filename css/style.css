@@ -1,15 +1,17 @@
 body {
     background-color: red;
-    color: blanchedalmond;
     font-family: 'Helvetica';}
+
+header {
+    padding: 20px;
+    text-align: center;
+}
 
 header, h2 {
     background-color: blanchedalmond;
-    text-align: center;
-    padding: 20px;
 }
 
-header h1 {
+header h1, h2 {
     color: rgb(216, 2, 2);
 }
 
@@ -52,6 +54,10 @@ iframe {
     text-align: center;
 }
 
+p {
+        color: blanchedalmond;
+}
+
 .image {
     border-radius: 8px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -64,10 +70,6 @@ iframe {
 
 #two {
     width: 300px;
-}
-
-.contact {
-    background-color: blanchedalmond;
 }
 
 
