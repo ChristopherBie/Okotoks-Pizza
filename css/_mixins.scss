@@ -1,0 +1,10 @@
+@mixin heading($h-alignment) {
+    padding: 20px;
+    text-align: $h-alignment;
+}
+
+@mixin animation($name, $duration) {
+    animation-name: $name;
+    animation-duration: $duration;
+    animation-timing-function: ease-out;
+}

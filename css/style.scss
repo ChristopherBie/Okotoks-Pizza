@@ -1,0 +1,111 @@
+@import '_colours.scss';
+@import '_mixins.scss';
+
+
+body {
+    background-color: $theme-colour2;
+    font-family: 'Helvetica';
+}
+
+header {
+    @include heading(center);
+}
+
+header, h2 {
+    background-color: $theme-colour1;
+}
+
+header h1, h2 {
+    color: $heading-colour;
+}
+
+@keyframes h2 {
+    0% {background-color: $theme-colour1;}
+    100% {background-color: $transition-colour;}
+}
+
+h2:hover {
+    @include animation(h2, 3s);
+}
+
+.logo {
+    width: 200px;
+    transition: 2s ease-in-out 0.5s;
+}
+
+.logo:hover {
+    width: 250px;
+}
+
+div {
+    h1 {
+        @include heading(left);
+    }
+}
+
+.nav-bar {
+    background-color: $nav-bar-colour;
+    text-size-adjust: 180;
+}
+
+a#contact + a {
+    color: $contact-link-colour;
+    font-style: italic;
+}
+
+a {
+    &:link {
+        color: $link-colour;
+        transition-property: font-size;
+        transition-duration: 0.5s;
+        transition-timing-function: linear;
+    }
+    &:hover {
+        font-weight: bold;
+        font-size: 1.2em;
+    }
+    &:visited {
+        color: $theme-colour1;
+    }
+    &:active {
+        color: $active-link-colour;
+    }
+}
+
+iframe {
+    width: 560px;
+    height: 315px;
+}
+
+.iframe {
+    text-align: center;
+}
+
+p {
+    color: $theme-colour1;
+}
+
+.image {
+    border-radius: 20px;
+    box-shadow: 0 6px 20px 0 $shadow-colour;
+    margin-right: 10px;
+    margin-bottom: 35px;
+    &:hover {
+        @include animation(corners, 1s);
+    }
+}
+
+@keyframes corners {
+    0% {border-radius: 20px;}
+    100% {border-radius: 0px;}
+}
+
+#one, #three {
+    width: 450px;
+}
+
+#two {
+    width: 300px;
+}
+
+
