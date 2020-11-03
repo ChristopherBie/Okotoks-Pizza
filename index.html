@@ -2,10 +2,11 @@
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
-        <link rel="icon" href="images/okotoks-pizza-logo.png"
+        <link rel="icon" href="images/bg_tile.png"
             alt="Okotoks Pizza logo">
         <title>Welcome to OkotoksPizza.ca!</title>
         <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <meta name="description" content="The homepage of Okotoks Pizza 
             featuring a short video, an introductory message and some pictures.">
         <meta name="author" content="Matt Cleveland">
@@ -15,21 +16,28 @@
             pizzeria.">
         <meta property="og:url" content="https://OkotoksPizza.ca">
     </head>
-    <body>
+    
+    <body style="background-image:url('images/bg_tile.png')">
         <header>
-            <div>
-                <img class="logo" src="images/okotoks-pizza-logo.png" 
-                    alt="Okotoks Pizza logo">
-            </div>
-            <div>
-                <h1>Welcome to OkotoksPizza.ca!</h1>
+            <div class="grid-wrapper">
+                <div class="logo">
+                    <img src="images/okotoks-pizza-logo.png" 
+                        alt="Okotoks Pizza logo">
+                </div>
+                <div class="welcome">
+                    <h1>Welcome!</h1>
+                </div>
+                <div class="button">
+                    <button type="button">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                </div>
             </div>
         </header>
         <section class="nav-bar">
             <a href="menu.html">menu</a>
             <a href="contact.html" id="contact">contact</a>
-            <a href="https://www.yelp.ca/biz/nitzas-pizza-st-albert-2">See what 
-                others have to say about us!</a>
+            <a href="https://www.yelp.ca/biz/nitzas-pizza-st-albert-2">testimonials</a>
         </section>
         <br><br>
         <section class="iframe">
