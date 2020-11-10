@@ -38,14 +38,16 @@ header {
 
     .logo {
         grid-area: logo;
-        padding: 15px 15px;
+        // padding: 15px 15px;
+        align-self: center;
 //      transition: 1s ease-in-out 0.5s;
 //      &:hover {
 //         width: 630px;
 //      }
 
         #logo {
-            width: 62.5vw;
+            width: 50vw;
+            max-width: 250px;
         }
     }
 

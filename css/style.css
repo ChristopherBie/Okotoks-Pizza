@@ -23,11 +23,14 @@ header {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: logo;
-  padding: 15px 15px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 .grid-wrapper .logo #logo {
-  width: 62.5vw;
+  width: 50vw;
+  max-width: 250px;
 }
 
 .grid-wrapper .button {
