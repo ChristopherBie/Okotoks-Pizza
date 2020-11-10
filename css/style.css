@@ -22,10 +22,14 @@
 
 body {
   min-height: 100vh;
+  font-family: Fabrikat;
 }
 
 header {
   background-color: white;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -60,20 +64,22 @@ header {
   -ms-grid-row: 2;
   -ms-grid-column: 2;
   grid-area: button;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -ms-grid-column-align: center;
-      justify-self: center;
+  justify-self: left;
   position: relative;
 }
 
 .grid-wrapper .nav .button {
   position: absolute;
-  top: 0;
+  top: 50;
   right: 0;
-  width: 28px;
-  height: 30px;
+  width: 50px;
+  height: 42px;
   opacity: 0;
   cursor: pointer;
 }
@@ -88,7 +94,7 @@ header {
 }
 
 .grid-wrapper .nav button {
-  font-size: 2.5rem;
+  font-size: 2rem;
   padding-left: 10px;
   padding-right: 10px;
 }
@@ -97,9 +103,10 @@ header {
   position: fixed;
   top: 0px;
   left: 0px;
-  width: 280px;
+  width: 230px;
   height: 100vh;
-  background-color: #777;
+  font-weight: bold;
+  background-color: #a51818;
   -webkit-transform: translateX(-100%);
           transform: translateX(-100%);
   -webkit-transition: -webkit-transform 0.2s ease-in-out;
@@ -108,8 +115,8 @@ header {
   transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
 }
 
-.grid-wrapper .nav .fa-bars {
-  font-size: 2rem;
+.grid-wrapper .nav .menu li {
+  padding-top: 60px;
 }
 
 .grid-wrapper .motto {
@@ -133,10 +140,11 @@ header {
   grid-area: phone;
   background-color: #cd0000;
   font-family: Fabrikat;
-  border-color: #a51818;
-  border-top-width: 15px;
+  border: 5px solid #a51818;
+  border-left: none;
+  border-right: none;
   height: 40px;
-  padding: 7px;
+  padding: 3px;
   font-size: 1.2rem;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -215,6 +223,13 @@ p {
   100% {
     border-radius: 0px;
   }
+}
+
+footer {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 0.5rem;
 }
 
 @media only screen and (min-width: 600px) {
