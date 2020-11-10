@@ -40,7 +40,7 @@ body {
 header {
     // @include heading(center);
     background-color: $white;
-    justify-content: center;
+    // justify-content: center;
     align-items: center;
     text-align: center;
 }
@@ -80,9 +80,9 @@ header {
     
     .nav {
         grid-area: button;
-        display: flex;
+        // display: flex;
         align-items: center;
-        justify-content: right;
+        justify-self: center;
         // justify-self: end;
         position: relative;
 
@@ -113,6 +113,21 @@ header {
             // margin-left: 20px;
             // margin-right: 10px;
         }
+
+        .menu {
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            width: 280px;
+            height: 100vh;
+            background-color: #777;
+            transform: translateX(-100%);
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .fa-bars {
+            font-size: 2rem;
+        }
     }
 
     .motto {
@@ -134,7 +149,7 @@ header {
         background-color: $light-red;
         font-family: Fabrikat;
         border-color: $dark-red;
-        border-top: 30px;
+        border-top-width: 15px;
         height: 40px;
         padding: 7px;
         font-size: 1.2rem;

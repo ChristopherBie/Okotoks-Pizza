@@ -26,9 +26,6 @@ body {
 
 header {
   background-color: white;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -63,15 +60,11 @@ header {
   -ms-grid-row: 2;
   -ms-grid-column: 2;
   grid-area: button;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: right;
-      -ms-flex-pack: right;
-          justify-content: right;
+  -ms-grid-column-align: center;
+      justify-self: center;
   position: relative;
 }
 
@@ -100,6 +93,25 @@ header {
   padding-right: 10px;
 }
 
+.grid-wrapper .nav .menu {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 280px;
+  height: 100vh;
+  background-color: #777;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  -webkit-transition: -webkit-transform 0.2s ease-in-out;
+  transition: -webkit-transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+}
+
+.grid-wrapper .nav .fa-bars {
+  font-size: 2rem;
+}
+
 .grid-wrapper .motto {
   -ms-grid-row: 3;
   -ms-grid-column: 1;
@@ -122,7 +134,7 @@ header {
   background-color: #cd0000;
   font-family: Fabrikat;
   border-color: #a51818;
-  border-top: 30px;
+  border-top-width: 15px;
   height: 40px;
   padding: 7px;
   font-size: 1.2rem;
