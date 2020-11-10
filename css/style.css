@@ -5,88 +5,83 @@
   margin: 0;
 }
 
-body {
-  background-color: red;
-  font-family: 'Helvetica';
+header {
+  text-align: center;
 }
 
 .grid-wrapper {
-  max-width: 100vw;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
-  -ms-grid-rows: 3fr 2fr;
-      grid-template-rows: 3fr 2fr;
-      grid-template-areas: 'logo welcome' 'logo button';
-  text-align: center;
+  -ms-grid-columns: 3fr 1fr;
+      grid-template-columns: 3fr 1fr;
+  -ms-grid-rows: 60vw 1fr;
+      grid-template-rows: 60vw 1fr;
+      grid-template-areas: 'logo button' 'welcome welcome';
 }
 
 .grid-wrapper .logo {
   -ms-grid-row: 1;
-  -ms-grid-row-span: 2;
   -ms-grid-column: 1;
   grid-area: logo;
-  margin: 50px;
+  padding: 15px 15px;
 }
 
-.grid-wrapper .welcome {
-  -ms-grid-row: 1;
-  -ms-grid-column: 2;
-  grid-area: welcome;
-  padding-top: 3em;
-  font-size: 2rem;
+.grid-wrapper .logo #logo {
+  width: 62.5vw;
 }
 
 .grid-wrapper .button {
-  -ms-grid-row: 2;
+  -ms-grid-row: 1;
   -ms-grid-column: 2;
   grid-area: button;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: right;
+      -ms-flex-pack: right;
+          justify-content: right;
 }
 
 .grid-wrapper .button button {
-  font-size: 5rem;
-  display: inline-block;
+  font-size: 3rem;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
-header h1, h2 {
-  color: #d80202;
+.grid-wrapper .welcome {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: welcome;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.grid-wrapper .welcome h1 {
+  margin-top: 50vw;
 }
 
 header, h2 {
   background-color: white;
 }
 
+h1, h2 {
+  color: #d80202;
+}
+
 .nav-bar {
   display: none;
-}
-
-a#contact + a {
-  color: darkred;
-  font-style: italic;
-}
-
-a:link {
-  color: black;
-  -webkit-transition-property: font-size;
-  transition-property: font-size;
-  -webkit-transition-duration: 0.4s;
-          transition-duration: 0.4s;
-  -webkit-transition-timing-function: linear;
-          transition-timing-function: linear;
-}
-
-a:hover {
-  font-weight: bold;
-  font-size: 1.2em;
-}
-
-a:visited {
-  color: white;
-}
-
-a:active {
-  color: blue;
+  position: absolute;
 }
 
 iframe {
@@ -97,33 +92,6 @@ iframe {
 
 h2 {
   padding: 3px 15px;
-}
-
-h2:hover {
-  -webkit-animation-name: h2;
-          animation-name: h2;
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s;
-  -webkit-animation-timing-function: ease-out;
-          animation-timing-function: ease-out;
-}
-
-@-webkit-keyframes h2 {
-  0% {
-    background-color: white;
-  }
-  100% {
-    background-color: white;
-  }
-}
-
-@keyframes h2 {
-  0% {
-    background-color: white;
-  }
-  100% {
-    background-color: white;
-  }
 }
 
 p {
@@ -168,24 +136,52 @@ p {
 }
 
 @media only screen and (min-width: 600px) {
+  .grid-wrapper {
+    -ms-grid-columns: 250px 1fr 0px;
+        grid-template-columns: 250px 1fr 0px;
+  }
   button {
-    visibility: hidden;
     display: none;
+    position: absolute;
   }
   .nav-bar {
     display: block;
     background-color: #e07326;
-    height: 28px;
+    height: 33px;
+    padding: 5px;
   }
   .nav-bar a {
     padding-left: 25px;
+    font-size: large;
+  }
+  .nav-bar a:link {
+    color: black;
+    -webkit-transition-property: font-size;
+    transition-property: font-size;
+    -webkit-transition-duration: 0.4s;
+            transition-duration: 0.4s;
+    -webkit-transition-timing-function: linear;
+            transition-timing-function: linear;
+  }
+  .nav-bar a:hover {
+    font-weight: bold;
+    font-size: 1.2em;
+  }
+  .nav-bar a:visited {
+    color: white;
+  }
+  .nav-bar a:active {
+    color: blue;
   }
 }
 
 @media only screen and (min-width: 991px) {
+  iframe {
+    max-width: 991px;
+    max-height: 558px;
+  }
   .iframe {
     text-align: center;
-    max-width: 991px;
   }
   .image {
     max-width: 892px;

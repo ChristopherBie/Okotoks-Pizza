@@ -1,7 +1,7 @@
 @mixin heading($h-alignment) {
     padding: 20px;
     text-align: $h-alignment;
-}
+} //delete?
 
 @mixin animation($name, $duration) {
     animation-name: $name;
