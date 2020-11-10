@@ -31,13 +31,17 @@
         format('truetype');
 }
 
-// body {
-//     background-color: $theme-colour2;
+body {
+    min-height: 100vh;
+//     background-color: $theme-2;
 //     font-family: 'Helvetica';
-// }
+}
 
 header {
     // @include heading(center);
+    background-color: $white;
+    justify-content: center;
+    align-items: center;
     text-align: center;
 }
 
@@ -45,16 +49,24 @@ header {
     display: grid;
     grid-template-columns: 3fr 1fr;
     // 250px 45fr 11fr;
-    grid-template-rows: 10px 60vw 1fr;
+    grid-template-rows: 10px 54vw 1fr 18px;
     grid-template-areas:
+        'top top'
         'logo button'
-        'welcome welcome';
+        'motto motto'
+        'phone phone';
     // text-align: center;
+
+    // .top {
+    //     grid-area: top;
+    //     height: 5vw;
+    // }
 
     .logo {
         grid-area: logo;
         // padding: 15px 15px;
         align-self: center;
+        // max-height: 10px;
 //      transition: 1s ease-in-out 0.5s;
 //      &:hover {
 //         width: 630px;
@@ -65,15 +77,37 @@ header {
             max-width: 250px;
         }
     }
-
-    .button {
+    
+    .nav {
         grid-area: button;
         display: flex;
         align-items: center;
         justify-content: right;
+        // justify-self: end;
+        position: relative;
 
+        .button {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 28px; //?
+            height: 30px; //?
+            opacity: 0;
+            cursor: pointer;
+
+            &:checked {
+                ~ .menu {
+                    transform: none;
+                }
+
+                ~ .fa-bars:before {
+                    content: '\f00d';
+                }
+            }
+        }
+        
         button {
-            font-size: 3rem;
+            font-size: 2.5rem;
             padding-left: 10px;
             padding-right: 10px;
             // margin-left: 20px;
@@ -81,28 +115,49 @@ header {
         }
     }
 
-    .welcome {
+    .motto {
 
         // h1 {
         //     margin-top: 50vw;
         // }
 
-        grid-area: welcome;
-        display: flex;
-        // padding-top: 3.5em;
+        grid-area: motto;
+        // display: flex;
+        padding-bottom: 15px;
         // font-size: 1rem;
         align-items: center;
         justify-content: center;
     }
+
+    .phone {
+        grid-area: phone;
+        background-color: $light-red;
+        font-family: Fabrikat;
+        border-color: $dark-red;
+        border-top: 30px;
+        height: 40px;
+        padding: 7px;
+        font-size: 1.2rem;
+        justify-content: center;    
+
+        a {
+            color: $white;
+        }
+    }
 }
 
 header, h2 {
-    background-color: $theme-colour1;
+    background-color: $white;
 }
 
-h1, h2 {
-    color: $heading-colour;
-    // font-family: 'Bernard';
+h1 {
+    font-family: Bernard;
+    color: $light-red;
+}
+
+h2 {
+    font-family: magneto;
+    background-image:url('images/bg_tile.png');
 }
 
 // h1, h2 {
@@ -135,8 +190,8 @@ h2 {
 }
 
 // @keyframes h2 {
-//     0% {background-color: $theme-colour1;}
-//     100% {background-color: $transition-colour;}
+//     0% {background-color: $theme-1;}
+//     100% {background-color: $transition;}
 // }
 
 p {
@@ -147,7 +202,7 @@ p {
 .image {
     display: block;
     border-radius: 20px;
-    box-shadow: 0 6px 20px 0 $shadow-colour;
+    box-shadow: 0 6px 20px 0 $shadow;
     width: 90vw;
     margin: auto;
     // margin-right: 10px;
@@ -187,7 +242,7 @@ p {
     
     .nav-bar {
         display: block;
-        background-color: $nav-bar-colour;
+        background-color: $nav-bar;
         height: 33px;
         padding: 5px;
         // text-size-adjust: 180;
@@ -198,7 +253,7 @@ p {
             font-size: large;
 
             &:link {
-                color: $link-colour;
+                color: $link;
                 transition-property: font-size;
                 transition-duration: 0.4s;
                 transition-timing-function: linear;
@@ -210,14 +265,14 @@ p {
             }
 
             &:visited {
-                color: $theme-colour1;
+                color: purple;
             }
             
             &:active {
-                color: $active-link-colour;
+                color: $active-link;
             }
         // a#contact + a {
-        //     color: $contact-link-colour;
+        //     color: $contact-link;
         //     font-style: italic;
         // }
         }

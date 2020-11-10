@@ -20,7 +20,18 @@
   src: local("Magneto-Grassetto"), local("magneto-grassetto"), local("Magneto"), local("magneto"), url("magneto-grassetto.ttf") format("truetype");
 }
 
+body {
+  min-height: 100vh;
+}
+
 header {
+  background-color: white;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   text-align: center;
 }
 
@@ -29,13 +40,13 @@ header {
   display: grid;
   -ms-grid-columns: 3fr 1fr;
       grid-template-columns: 3fr 1fr;
-  -ms-grid-rows: 10px 60vw 1fr;
-      grid-template-rows: 10px 60vw 1fr;
-      grid-template-areas: 'logo button' 'welcome welcome';
+  -ms-grid-rows: 10px 54vw 1fr 18px;
+      grid-template-rows: 10px 54vw 1fr 18px;
+      grid-template-areas: 'top top' 'logo button' 'motto motto' 'phone phone';
 }
 
 .grid-wrapper .logo {
-  -ms-grid-row: 1;
+  -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: logo;
   -ms-flex-item-align: center;
@@ -48,8 +59,8 @@ header {
   max-width: 250px;
 }
 
-.grid-wrapper .button {
-  -ms-grid-row: 1;
+.grid-wrapper .nav {
+  -ms-grid-row: 2;
   -ms-grid-column: 2;
   grid-area: button;
   display: -webkit-box;
@@ -61,22 +72,40 @@ header {
   -webkit-box-pack: right;
       -ms-flex-pack: right;
           justify-content: right;
+  position: relative;
 }
 
-.grid-wrapper .button button {
-  font-size: 3rem;
+.grid-wrapper .nav .button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 28px;
+  height: 30px;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.grid-wrapper .nav .button:checked ~ .menu {
+  -webkit-transform: none;
+          transform: none;
+}
+
+.grid-wrapper .nav .button:checked ~ .fa-bars:before {
+  content: '\f00d';
+}
+
+.grid-wrapper .nav button {
+  font-size: 2.5rem;
   padding-left: 10px;
   padding-right: 10px;
 }
 
-.grid-wrapper .welcome {
-  -ms-grid-row: 2;
+.grid-wrapper .motto {
+  -ms-grid-row: 3;
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
-  grid-area: welcome;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  grid-area: motto;
+  padding-bottom: 15px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -85,12 +114,39 @@ header {
           justify-content: center;
 }
 
+.grid-wrapper .phone {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: phone;
+  background-color: #cd0000;
+  font-family: Fabrikat;
+  border-color: #a51818;
+  border-top: 30px;
+  height: 40px;
+  padding: 7px;
+  font-size: 1.2rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.grid-wrapper .phone a {
+  color: white;
+}
+
 header, h2 {
   background-color: white;
 }
 
-h1, h2 {
-  color: #d80202;
+h1 {
+  font-family: Bernard;
+  color: #cd0000;
+}
+
+h2 {
+  font-family: magneto;
+  background-image: url("images/bg_tile.png");
 }
 
 .nav-bar {
@@ -169,7 +225,7 @@ p {
     font-size: large;
   }
   .nav-bar a:link {
-    color: black;
+    color: blue;
     -webkit-transition-property: font-size;
     transition-property: font-size;
     -webkit-transition-duration: 0.4s;
@@ -182,10 +238,10 @@ p {
     font-size: 1.2em;
   }
   .nav-bar a:visited {
-    color: white;
+    color: purple;
   }
   .nav-bar a:active {
-    color: blue;
+    color: lightblue;
   }
 }
 

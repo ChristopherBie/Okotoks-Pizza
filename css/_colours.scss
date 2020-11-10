@@ -1,10 +1,14 @@
-$theme-colour1: white;
-$theme-colour2: red;
-$heading-colour: rgb(216, 2, 2);
-$nav-bar-colour: rgb(224, 115, 38);
-$link-colour: black;
-$contact-link-colour: darkred;
-$active-link-colour: blue;
-$transition-colour: white;
+$white: white;
+$dark-red: #a51818;
+$light-red: #cd0000;
+$link:blue;
+$active-link: lightblue;
 $basic-text: black;
-$shadow-colour: rgba(0, 0, 0, 0.8);
+$transition: white;
+$shadow: rgba(0, 0, 0, 0.8);
+
+
+//
+$heading: rgb(216, 2, 2);
+$nav-bar: rgb(224, 115, 38);
+$contact-link: rgb(2, 2, 87);
