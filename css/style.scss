@@ -8,13 +8,28 @@
     margin: 0;
 }
 
-// @font-face {
-// 	font-family: 'Bernard';
-//     src: local('Monotype Bernard Std Condensed'), 
-//         local('Bernard MT Std Condensed'), 
-//         url('Bernard MT Std Condensed.ttf') 
-//         format('truetype');
-// }
+@font-face {
+	font-family: 'Bernard';
+    src: local('Monotype Bernard Std Condensed'), 
+        local('Bernard MT Std Condensed'), 
+        url('Bernard MT Std Condensed.ttf') 
+        format('truetype');
+}
+
+@font-face {
+	font-family: 'Fabrikat';
+    src: local('Fabrikat Normal Regular'), 
+        url('Fabrikat Normal Regular.otf') 
+        format('opentype');
+}
+
+@font-face {
+	font-family: 'Magneto';
+    src: local('Magneto-Grassetto'), 
+        local('magneto-grassetto'), local('Magneto'), 
+        local('magneto'), url('magneto-grassetto.ttf') 
+        format('truetype');
+}
 
 // body {
 //     background-color: $theme-colour2;
@@ -30,7 +45,7 @@ header {
     display: grid;
     grid-template-columns: 3fr 1fr;
     // 250px 45fr 11fr;
-    grid-template-rows: 60vw 1fr;
+    grid-template-rows: 10px 60vw 1fr;
     grid-template-areas:
         'logo button'
         'welcome welcome';
@@ -68,9 +83,9 @@ header {
 
     .welcome {
 
-        h1 {
-            margin-top: 50vw;
-        }
+        // h1 {
+        //     margin-top: 50vw;
+        // }
 
         grid-area: welcome;
         display: flex;

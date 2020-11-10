@@ -5,6 +5,21 @@
   margin: 0;
 }
 
+@font-face {
+  font-family: 'Bernard';
+  src: local("Monotype Bernard Std Condensed"), local("Bernard MT Std Condensed"), url("Bernard MT Std Condensed.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Fabrikat';
+  src: local("Fabrikat Normal Regular"), url("Fabrikat Normal Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: 'Magneto';
+  src: local("Magneto-Grassetto"), local("magneto-grassetto"), local("Magneto"), local("magneto"), url("magneto-grassetto.ttf") format("truetype");
+}
+
 header {
   text-align: center;
 }
@@ -14,8 +29,8 @@ header {
   display: grid;
   -ms-grid-columns: 3fr 1fr;
       grid-template-columns: 3fr 1fr;
-  -ms-grid-rows: 60vw 1fr;
-      grid-template-rows: 60vw 1fr;
+  -ms-grid-rows: 10px 60vw 1fr;
+      grid-template-rows: 10px 60vw 1fr;
       grid-template-areas: 'logo button' 'welcome welcome';
 }
 
@@ -68,10 +83,6 @@ header {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-}
-
-.grid-wrapper .welcome h1 {
-  margin-top: 50vw;
 }
 
 header, h2 {
