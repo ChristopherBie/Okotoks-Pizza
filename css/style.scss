@@ -75,7 +75,7 @@ header {
 
         #logo {
             width: 50vw;
-            max-width: 250px;
+            max-width: 200px;
         }
     }
     
@@ -121,13 +121,17 @@ header {
             left: 0px;
             width: 230px;
             height: 100vh;
-            font-weight: bold;;
+            font-weight: bold;
             background-color: $dark-red;
             transform: translateX(-100%);
             transition: transform 0.2s ease-in-out;
-
             li {
                 padding-top: 60px;
+                font-size: 1.3rem;
+
+                a:visited {
+                    color: blue;
+                }
             }
         }
 
@@ -162,8 +166,12 @@ header {
         font-size: 1.2rem;
         justify-content: center;    
 
-        a {
+        a, span {
             color: $white;
+        }
+
+        span {
+            display: none;
         }
     }
 }
@@ -184,23 +192,22 @@ h2 {
 
 // h1, h2 {
     // font-family: Monotype Bernard Std Condensed;
-    // border-color: royalblue;
-    // outline: royalblue;
 // }
 
 .nav-bar {
     display: none;
-    position: absolute;
+    // position: absolute;
     // text-size-adjust: 180;
     // add shadow
 }
 
-iframe {
-    width: 100vw;
-    height: 56.25vw; /* 315px/560px = 0.5625 */
-    // max-width: 700px;
-    // width: 560px;
-    // height: 315px;
+.iframe {
+    text-align: center;
+
+    iframe {
+        width: 90vw;
+        height: 50.625vw; // 315px / 560px * 0.9 = 0.50625
+    }
 }
 
 h2 {
@@ -236,6 +243,20 @@ p {
     }
 }
 
+.food-menu-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 0.25rem;
+    > .item {
+        background-color: grey;
+        > .image {
+            height: 200px;
+            background-size: cover;
+            background-position: center center;
+        }
+    }
+}
+
 @keyframes corners {
     0% {border-radius: 20px;}
     100% {border-radius: 0px;}
@@ -259,68 +280,101 @@ footer {
 
 
 
+
+
 @media only screen and (min-width: 600px) {
     .grid-wrapper {
-        grid-template-columns: 250px 1fr 0px;
-    }
-    
-    button {
-        // visibility: hidden;
-        display: none;
-        position: absolute;
-    }
-    
-    .nav-bar {
-        display: block;
-        background-color: $nav-bar;
-        height: 33px;
-        padding: 5px;
-        // text-size-adjust: 180;
-        // add shadow
+        grid-template-columns: 250px 1fr;
+        grid-template-rows: 210px 40px 40px;
+        grid-template-areas:
+            'logo motto'
+            'phone phone'
+            'nav nav';
 
-        a {
-            padding-left: 25px;
-            font-size: large;
-
-            &:link {
-                color: $link;
-                transition-property: font-size;
-                transition-duration: 0.4s;
-                transition-timing-function: linear;
-            }
-
-            &:hover {
-                font-weight: bold;
-                font-size: 1.2em;
-            }
-
-            &:visited {
-                color: purple;
-            }
-            
-            &:active {
-                color: $active-link;
-            }
-        // a#contact + a {
-        //     color: $contact-link;
-        //     font-style: italic;
-        // }
+        button {
+            // visibility: hidden;
+            display: none;
+            position: absolute;
         }
+
+        .motto {
+            padding-top: 63px;
+            text-align: center;
+
+            // h1 {
+            //    text-align: center;
+            // }
+        }
+
+        .phone {
+            text-align: left;
+            padding-left: 30px;
+
+            a {
+                display: none;
+            }
+
+            span {
+                display: block;
+            }
+        }
+        
+        .nav-bar {
+            grid-area: nav;
+            background-color: $white;
+            padding-top: 6px;
+            padding-bottom: 30px;
+            padding-left: 5px;
+            border-bottom: 4px solid $dark-red;
+            display: flex;
+            height: 33px;
+            // text-size-adjust: 180;
+            // add shadow
+
+            a {
+                padding-left: 25px;
+                font-size: large;
+
+                &:link {
+                    color: $link;
+                    transition-property: font-size;
+                    transition-duration: 0.4s;
+                    transition-timing-function: linear;
+                }
+
+                &:hover {
+                    font-weight: bold;
+                    font-size: 1.2em;
+                }
+
+                &:visited {
+                    color: purple;
+                }
+                
+                &:active {
+                    color: $active-link;
+                }
+                // &#contact + a {
+                //     color: $contact-link;
+                //     font-style: italic;
+                // }
+            }
+        }
+    }
+
+    iframe {
+        max-width: 700px;
+        max-height: 393px;
+    }
+
+    .image {
+        max-width: 700px;
     }
 }
 
 
 @media only screen and (min-width: 991px) {
-    iframe {
-        max-width: 991px;
-        max-height: 558px;
-    }
 
-    .iframe {
-        text-align: center;
-    }
+    //no additional adjustments are necessary for desktop and laptop screens
 
-    .image {
-        max-width: 892px;
-    }
 }

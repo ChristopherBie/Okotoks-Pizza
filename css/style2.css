@@ -14,7 +14,7 @@
 }
 
 .layout-wrapper > header {
-  background-color: grey;
+  background-color: red;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 2fr 1fr;
@@ -108,4 +108,4 @@
         grid-template-columns: repeat(4, 1fr);
   }
 }
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=style2.css.map */

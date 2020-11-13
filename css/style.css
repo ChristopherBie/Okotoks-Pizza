@@ -57,7 +57,7 @@ header {
 
 .grid-wrapper .logo #logo {
   width: 50vw;
-  max-width: 250px;
+  max-width: 200px;
 }
 
 .grid-wrapper .nav {
@@ -117,6 +117,11 @@ header {
 
 .grid-wrapper .nav .menu li {
   padding-top: 60px;
+  font-size: 1.3rem;
+}
+
+.grid-wrapper .nav .menu li a:visited {
+  color: blue;
 }
 
 .grid-wrapper .motto {
@@ -151,8 +156,12 @@ header {
           justify-content: center;
 }
 
-.grid-wrapper .phone a {
+.grid-wrapper .phone a, .grid-wrapper .phone span {
   color: white;
+}
+
+.grid-wrapper .phone span {
+  display: none;
 }
 
 header, h2 {
@@ -171,13 +180,15 @@ h2 {
 
 .nav-bar {
   display: none;
-  position: absolute;
 }
 
-iframe {
-  width: 100vw;
-  height: 56.25vw;
-  /* 315px/560px = 0.5625 */
+.iframe {
+  text-align: center;
+}
+
+.iframe iframe {
+  width: 90vw;
+  height: 50.625vw;
 }
 
 h2 {
@@ -207,6 +218,24 @@ p {
           animation-timing-function: ease-out;
 }
 
+.food-menu-wrapper {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  grid-gap: 0.25rem;
+}
+
+.food-menu-wrapper > .item {
+  background-color: grey;
+}
+
+.food-menu-wrapper > .item > .image {
+  height: 200px;
+  background-size: cover;
+  background-position: center center;
+}
+
 @-webkit-keyframes corners {
   0% {
     border-radius: 20px;
@@ -234,24 +263,50 @@ footer {
 
 @media only screen and (min-width: 600px) {
   .grid-wrapper {
-    -ms-grid-columns: 250px 1fr 0px;
-        grid-template-columns: 250px 1fr 0px;
+    -ms-grid-columns: 250px 1fr;
+        grid-template-columns: 250px 1fr;
+    -ms-grid-rows: 210px 40px 40px;
+        grid-template-rows: 210px 40px 40px;
+        grid-template-areas: 'logo motto' 'phone phone' 'nav nav';
   }
-  button {
+  .grid-wrapper button {
     display: none;
     position: absolute;
   }
-  .nav-bar {
-    display: block;
-    background-color: #e07326;
-    height: 33px;
-    padding: 5px;
+  .grid-wrapper .motto {
+    padding-top: 63px;
+    text-align: center;
   }
-  .nav-bar a {
+  .grid-wrapper .phone {
+    text-align: left;
+    padding-left: 30px;
+  }
+  .grid-wrapper .phone a {
+    display: none;
+  }
+  .grid-wrapper .phone span {
+    display: block;
+  }
+  .grid-wrapper .nav-bar {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: nav;
+    background-color: white;
+    padding-top: 6px;
+    padding-bottom: 30px;
+    padding-left: 5px;
+    border-bottom: 4px solid #a51818;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 33px;
+  }
+  .grid-wrapper .nav-bar a {
     padding-left: 25px;
     font-size: large;
   }
-  .nav-bar a:link {
+  .grid-wrapper .nav-bar a:link {
     color: blue;
     -webkit-transition-property: font-size;
     transition-property: font-size;
@@ -260,28 +315,22 @@ footer {
     -webkit-transition-timing-function: linear;
             transition-timing-function: linear;
   }
-  .nav-bar a:hover {
+  .grid-wrapper .nav-bar a:hover {
     font-weight: bold;
     font-size: 1.2em;
   }
-  .nav-bar a:visited {
+  .grid-wrapper .nav-bar a:visited {
     color: purple;
   }
-  .nav-bar a:active {
+  .grid-wrapper .nav-bar a:active {
     color: lightblue;
   }
-}
-
-@media only screen and (min-width: 991px) {
   iframe {
-    max-width: 991px;
-    max-height: 558px;
-  }
-  .iframe {
-    text-align: center;
+    max-width: 700px;
+    max-height: 393px;
   }
   .image {
-    max-width: 892px;
+    max-width: 700px;
   }
 }
 /*# sourceMappingURL=style.css.map */
