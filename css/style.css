@@ -1,10 +1,3 @@
-* {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
 @font-face {
   font-family: 'Bernard';
   src: local("Monotype Bernard Std Condensed"), local("Bernard MT Std Condensed"), url("Bernard MT Std Condensed.ttf") format("truetype");
@@ -20,9 +13,17 @@
   src: local("Magneto-Grassetto"), local("magneto-grassetto"), local("Magneto"), local("magneto"), url("magneto-grassetto.ttf") format("truetype");
 }
 
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
 body {
-  min-height: 100vh;
   font-family: Fabrikat;
+  background-color: #a51818;
+  min-height: 100vh;
 }
 
 header {
@@ -138,6 +139,11 @@ header {
           justify-content: center;
 }
 
+.grid-wrapper .motto h1 {
+  font-family: Bernard;
+  color: #cd0000;
+}
+
 .grid-wrapper .phone {
   -ms-grid-row: 4;
   -ms-grid-column: 1;
@@ -164,22 +170,12 @@ header {
   display: none;
 }
 
-header, h2 {
-  background-color: white;
-}
-
-h1 {
-  font-family: Bernard;
-  color: #cd0000;
-}
-
-h2 {
-  font-family: magneto;
-  background-image: url("images/bg_tile.png");
-}
-
 .nav-bar {
   display: none;
+}
+
+main {
+  background-image: url("https://restaumatic.imgix.net/uploads/media_library/8ed5781b65c580d35cfda9741be8c13e.png");
 }
 
 .iframe {
@@ -192,12 +188,20 @@ h2 {
 }
 
 h2 {
-  padding: 3px 15px;
+  padding: 3px 30px;
+  font-family: magneto;
+  border: 4px solid black;
+  border-left: none;
+  border-right: none;
+  background-image: url("../images/bg_tile.png");
 }
 
 p {
   color: black;
-  padding: 10px 15px;
+  padding-top: 14px;
+  padding-bottom: 6px;
+  padding-left: 30px;
+  padding-right: 35px;
 }
 
 .image {
@@ -254,8 +258,26 @@ p {
   }
 }
 
+.food-menu-wrapper {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  grid-gap: 0.25rem;
+}
+
+.food-menu-wrapper > .item {
+  background-color: #cd0000;
+}
+
+.food-menu-wrapper > .item > .menu-image {
+  height: 200px;
+  background-size: cover;
+  background-position: center center;
+}
+
 footer {
-  background-color: black;
+  background-color: #a51818;
   color: white;
   text-align: center;
   padding: 0.5rem;
@@ -331,6 +353,17 @@ footer {
   }
   .image {
     max-width: 700px;
+  }
+  .food-menu-wrapper {
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media only screen and (min-width: 991px) {
+  .food-menu-wrapper {
+    -ms-grid-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
 /*# sourceMappingURL=style.css.map */

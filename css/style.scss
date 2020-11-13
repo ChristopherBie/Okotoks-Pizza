@@ -2,12 +2,6 @@
 @import '_mixins.scss';
 
 
-* {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-}
-
 @font-face {
 	font-family: 'Bernard';
     src: local('Monotype Bernard Std Condensed'), 
@@ -31,11 +25,18 @@
         format('truetype');
 }
 
+
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
 body {
-    min-height: 100vh;
     font-family: Fabrikat;
-//     background-color: $theme-2;
-//     font-family: 'Helvetica';
+    background-color: $dark-red;
+    min-height: 100vh;
 }
 
 header {
@@ -142,9 +143,10 @@ header {
 
     .motto {
 
-        // h1 {
-        //     margin-top: 50vw;
-        // }
+        h1 {
+            font-family: Bernard;
+            color: $light-red;
+        }
 
         grid-area: motto;
         // display: flex;
@@ -176,29 +178,15 @@ header {
     }
 }
 
-header, h2 {
-    background-color: $white;
-}
-
-h1 {
-    font-family: Bernard;
-    color: $light-red;
-}
-
-h2 {
-    font-family: magneto;
-    background-image:url('images/bg_tile.png');
-}
-
-// h1, h2 {
-    // font-family: Monotype Bernard Std Condensed;
-// }
-
 .nav-bar {
     display: none;
     // position: absolute;
     // text-size-adjust: 180;
     // add shadow
+}
+
+main {
+    background-image: url('https://restaumatic.imgix.net/uploads/media_library/8ed5781b65c580d35cfda9741be8c13e.png');
 }
 
 .iframe {
@@ -211,11 +199,15 @@ h2 {
 }
 
 h2 {
-    padding: 3px 15px;
+    padding: 3px 30px;
+    font-family: magneto;
+    border: 4px solid $basic-text;
+    border-left: none;
+    border-right: none;
+    background-image: url('../images/bg_tile.png');
     // &:hover {
     //     @include animation(h2, 3s);
-    // } 
-    //add shadow
+    // } //add shadow?
 }
 
 // @keyframes h2 {
@@ -226,7 +218,10 @@ h2 {
 p {
     color: $basic-text;
     // font-family: Fabrikat;
-    padding: 10px 15px;
+    padding-top: 14px;
+    padding-bottom: 6px;
+    padding-left: 30px;
+    padding-right: 35px;
 }
 
 .image {
@@ -262,16 +257,22 @@ p {
     100% {border-radius: 0px;}
 }
 
-// #one, #three {
-//     // width: 450px;
-// }
-
-// #two {
-//     // width: 300px;
-// }
+.food-menu-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 0.25rem;
+    > .item {
+        background-color: $light-red;
+        > .menu-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center center;
+        }
+    }
+}
 
 footer {
-    background-color: black;
+    background-color: $dark-red;
     color: white;
     text-align: center;
     padding: 0.5rem;
@@ -370,11 +371,15 @@ footer {
     .image {
         max-width: 700px;
     }
+
+    .food-menu-wrapper {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
 }
 
 
 @media only screen and (min-width: 991px) {
-
-    //no additional adjustments are necessary for desktop and laptop screens
-
+    .food-menu-wrapper {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
 }
